@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import Drink from './Drink.js';
+import Button from 'react-bootstrap/Button';
 
 function DrinkDetail(props) {
   const { drink, onClickingDelete} = props; 
@@ -16,7 +17,7 @@ function DrinkDetail(props) {
       <Button variant="outline-danger" size="sm" onClick = {() => props.onClickingDelete(drink.id) }>Remove Drink</Button>
       <hr/>
     </React.Fragment>
-  )
+  );
 }
 
 DrinkDetail.propTypes = {

@@ -15,7 +15,7 @@ function Drink(props) {
   );
 }
 
-Drink.protoTypes = {
+Drink.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.string,

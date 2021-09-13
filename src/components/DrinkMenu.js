@@ -5,8 +5,7 @@ import PropTypes from 'prop-types';
 function DrinkMenu(props) {
   return (
     <React.Fragment>
-      <hr />
-      {props.menu.map((drink) =>
+      {props.drinkMenu.map((drink) =>
       <Drink
         whenDrinkClicked = { props.onDrinkSelection }
         name = {drink.name}
@@ -21,7 +20,7 @@ function DrinkMenu(props) {
 }
 
 DrinkMenu.propTypes = {
-  menu: PropTypes.array,
+  drinkMenu: PropTypes.array,
   onDrinkSelection: PropTypes.func,
 }; 
 

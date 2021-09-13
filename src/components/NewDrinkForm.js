@@ -6,7 +6,7 @@ import ReusableForm from "./ReusableForm";
 function NewDrinkForm(props) {
   function handleNewDrinkFormSubmission(event) {
     event.preventDefault();
-    props.NewDrinkCreation({
+    props.onNewDrinkCreation({
       name: event.target.name.value,
       brand: event.target.brand.value,
       price: event.target.price.value,
