@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Drink from './Drink.js';
+import Drink from './Drink';
 import Button from 'react-bootstrap/Button';
 
 function DrinkDetail(props) {

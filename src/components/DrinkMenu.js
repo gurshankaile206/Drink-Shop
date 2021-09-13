@@ -5,15 +5,16 @@ import PropTypes from 'prop-types';
 function DrinkMenu(props) {
   return (
     <React.Fragment>
+      <hr />
       {props.drinkMenu.map((drink) =>
       <Drink
         whenDrinkClicked = { props.onDrinkSelection }
-        name = {drink.name}
-        brand = {drink.brand}
-        price = {drink.price}
-        alcoholContent = {drink.alcoholContent} 
-        id = {drink.id}
-        key = {drink.id}/>
+        name={drink.name}
+        brand={drink.brand}
+        price={drink.price}
+        alcoholContent={drink.alcoholContent} 
+        id={drink.id}
+        key={drink.id}/>
         )}
     </React.Fragment>
   );
