@@ -1,28 +1,28 @@
-import React from 'react';
-import Drink from './Drink';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import Drink from "./Drink";
 
-function DrinkMenu(props) {
+function DrinkMenu(props){
   return (
     <React.Fragment>
-      <hr />
+      <hr/>
       {props.drinkMenu.map((drink) =>
-      <Drink
-        whenDrinkClicked = { props.onDrinkSelection }
-        name={drink.name}
-        brand={drink.brand}
-        price={drink.price}
-        alcoholContent={drink.alcoholContent} 
-        id={drink.id}
-        key={drink.id}/>
-        )}
+        <Drink
+          whenDrinkClicked = { props.onDrinkSelection }
+          names={drink.names}
+          brand={drink.brand}
+          price={drink.price}
+          alcoholContent={drink.alcoholContent}
+          id={drink.id}
+          key={drink.id}/>
+      )}
     </React.Fragment>
   );
 }
 
 DrinkMenu.propTypes = {
-  drinkMenu: PropTypes.array,
-  onDrinkSelection: PropTypes.func,
-}; 
+  ticketMenu: PropTypes.array,
+  onDrinkSelection: PropTypes.func
+};
 
 export default DrinkMenu;

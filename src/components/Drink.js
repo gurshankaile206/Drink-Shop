@@ -1,22 +1,21 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-function Drink(props) {
+function Drink(props){
   return (
     <React.Fragment>
-      <div onClick = { () => props.whenDrinkClicked(props.id)}>
-        <h3> Drink: {props.name}</h3>
-        <h6> Drink Brand: {props.brand}</h6>
-        <h6> Drink Price: {props.price}</h6>
-        <h6> Drink Alcohol Content: {props.alcoholContent}</h6>
-
+      <div onClick = {() => props.whenDrinkClicked(props.id)}>
+        <h3>{props.brand} - {props.names}</h3>
+        <p><em>{props.price}</em></p>
+        <p><em>{props.alcoholContent}</em></p>
       </div>
+      <hr/>
     </React.Fragment>
   );
 }
 
 Drink.propTypes = {
-  name: PropTypes.string,
+  names: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.string,
   alcoholContent: PropTypes.string,
