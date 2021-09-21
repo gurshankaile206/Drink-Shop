@@ -8,7 +8,12 @@ function EditDrinkForm (props) {
 
   function handleEditDrinkFormSubmission(event) {
     event.preventDefault();
-    props.onEditDrink({names: event.target.names.value, brand: event.target.brand.value, price: event.target.price.value, id: drink.id});
+    props.onEditDrink({names: event.target.names.value, 
+      brand: event.target.brand.value, 
+      price: event.target.price.value, 
+      pints: event.target.pints.value,
+      id: drink.id
+    });
   }
 
   return (
@@ -21,6 +26,7 @@ function EditDrinkForm (props) {
 }
 
 EditDrinkForm.propTypes = {
+  drink: PropTypes.object,
   onEditDrink: PropTypes.func
 };
 

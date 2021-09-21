@@ -8,14 +8,21 @@ function NewDrinkForm(props){
 
   function handleNewDrinkFormSubmission(event) {
     event.preventDefault();
-    props.onNewDrinkCreation({names: event.target.names.value, brand: event.target.brand.value, price: event.target.price.value, alcoholContent: event.target.alcoholContent.value, id: v4()});
+    props.onNewDrinkCreation({
+        names: event.target.names.value, 
+        brand: event.target.brand.value, 
+        price: event.target.price.value, 
+        alcoholContent: event.target.alcoholContent.value, 
+        pints: event.target.pints.value,
+        id: v4()
+      });
   }
 
   return (
     <React.Fragment>
       <ReusableForm 
         formSubmissionHandler={handleNewDrinkFormSubmission}
-        buttonText="Help!" />
+        buttonText="Submit" />
     </React.Fragment>
   );
 }

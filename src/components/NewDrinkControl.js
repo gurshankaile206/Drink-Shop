@@ -4,6 +4,7 @@ import DrinkMenu from './DrinkMenu';
 import DrinkDetail from './DrinkDetail';
 import EditDrinkForm from './EditDrinkForm';
 
+
 class DrinkControl extends React.Component {
 
   constructor(props) {
@@ -66,26 +67,44 @@ class DrinkControl extends React.Component {
     });
   }
 
+  handleSellPint = (drink) => {
+    if(drink.pints > 0) {
+      drink.pints--;
+    }
+    this.setState({
+      selectedDrink: drink
+    });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
+
     if (this.state.editing ) {      
       currentlyVisibleState = <EditDrinkForm drink = {this.state.selectedDrink} onEditDrink = {this.handleEditingDrinkInMenu} />
       buttonText = "Return to Drink Menu";
+
     } else if (this.state.selectedDrink != null) {
       currentlyVisibleState = 
       <DrinkDetail 
         drink = {this.state.selectedDrink} 
         onClickingDelete = {this.handleDeletingDrink} 
-        onClickingEdit = {this.handleEditClick} />
+        onClickingEdit = {this.handleEditClick}
+        onClickSellPint = {this.handleSellPint} />
       buttonText = "Return to Drink Menu";
+
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewDrinkForm onNewDrinkCreation={this.handleAddingNewDrinkToMenu}  />;
       buttonText = "Return to Drink Menu";
+
     } else {
-      currentlyVisibleState = <DrinkMenu drinkMenu={this.state.masterDrinkMenu} onDrinkSelection={this.handleChangingSelectedDrink} />;
+      currentlyVisibleState = 
+      <DrinkMenu 
+      drinkMenu={this.state.masterDrinkMenu} 
+      onDrinkSelection={this.handleChangingSelectedDrink} />
       buttonText = "Add Drink";
     }
+
     return (
       <React.Fragment>
         {currentlyVisibleState}

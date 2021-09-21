@@ -13,6 +13,7 @@ function DrinkMenu(props){
           brand={drink.brand}
           price={drink.price}
           alcoholContent={drink.alcoholContent}
+          pints={drink.pints}
           id={drink.id}
           key={drink.id}/>
       )}
@@ -22,7 +23,7 @@ function DrinkMenu(props){
 
 DrinkMenu.propTypes = {
   ticketMenu: PropTypes.array,
-  onDrinkSelection: PropTypes.func
+  onDrinkSelection: PropTypes.func,
 };
 
 export default DrinkMenu;
